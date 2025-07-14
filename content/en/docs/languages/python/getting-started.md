@@ -119,6 +119,13 @@ opentelemetry-instrument \
     flask run -p 8080
 ```
 
+Or you can enable auto-instrumentation programmatically by adding:
+```python
+from opentelemetry.instrumentation import auto_instrumentation
+auto_instrumentation.initialize()
+```
+at the top of your file.
+
 Open <http://localhost:8080/rolldice> in your web browser and reload the page a
 few times. After a while you should see the spans printed in the console, such
 as the following:
